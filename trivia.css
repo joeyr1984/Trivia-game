@@ -1,0 +1,48 @@
+body {
+    background-color: #F5FBFF;
+    color: #08090A;
+}
+#top {
+    height: 100px;
+}
+#logo-top {
+    height: 8rem;
+    padding:20px;
+}
+#main {
+    height: 35rem;
+    text-align: center;
+}
+h1 {
+font-family: pilar-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 50px;
+color:#8789C0;
+}
+#game-cartoon{
+    width: 22rem;
+}
+.button {
+font-family: pilar-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+font-size: 30px;
+background-color: #8789C0;
+padding: 15px 80px;
+border-radius: 50px;
+border: 0;
+color: white;
+margin-top: 20px;
+cursor: pointer;
+}
+button:hover {
+    background-color: #A3A8E5;
+}
+footer {
+    background-color: #08090A;
+    padding: 30px;
+}
+#footer-logo{
+width: 10rem;
+}
