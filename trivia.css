@@ -20,7 +20,7 @@ font-style: normal;
 font-size: 50px;
 color:#8789C0;
 }
-#game-cartoon{
+.game-cartoon{
     width: 22rem;
 }
 .button {
@@ -52,7 +52,7 @@ li{
 i{
     color: #5DFDCB;
 }
-#trivia {
+#trivia, #test-results {
     display: none;
 }
 #a,#b,#c,#d {
@@ -66,7 +66,7 @@ i{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#question {
+#question, label {
     font-family: 'Lato', sans-serif;
     color: #08090A;
 }
@@ -82,4 +82,7 @@ color: black
     font-family: 'Lato', sans-serif;
     color: #A3A8E5;
     display: none;
+}
+.form-inline{
+    justify-content: center;
 }

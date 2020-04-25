@@ -36,6 +36,8 @@ var currentCorrectAnswer = 0;
 var totalRightAnswer = 0;
 var currentQuestion = 0;
 var timerInterval;
+var endGame = document.getElementById("test-results");
+//var 
 
 function startGame() {
     startScreen.style.display = "none";
@@ -57,19 +59,25 @@ function checkAnswer(e) {
     setTimeout(loadQuestion, 1000);
 }
 function loadQuestion() {
-    questionArea.innerHTML = wholeGame[currentQuestion].question;
-    choiceArea.innerHTML = "";
+    if (currentQuestion < wholeGame.length) {
+        questionArea.innerHTML = wholeGame[currentQuestion].question;
+        choiceArea.innerHTML = "";
 
-    for (let index = 0; index < wholeGame[currentQuestion].choice.length; index++) {
-        const element = wholeGame[currentQuestion].choice[index];
-        var response = document.createElement("li");
-        response.setAttribute("id", abcd[index]);
-        response.classList.add("btn", "answer");
-        response.innerHTML = element;
-        response.addEventListener("click", checkAnswer);
-        choiceArea.appendChild(response);
+        for (let index = 0; index < wholeGame[currentQuestion].choice.length; index++) {
+            const element = wholeGame[currentQuestion].choice[index];
+            var response = document.createElement("li");
+            response.setAttribute("id", abcd[index]);
+            response.classList.add("btn", "answer");
+            response.innerHTML = element;
+            response.addEventListener("click", checkAnswer);
+            choiceArea.appendChild(response);
+        }
+        currentCorrectAnswer = wholeGame[currentQuestion].answer;
+    } else {
+        displayScore();
+
     }
-    currentCorrectAnswer = wholeGame[currentQuestion].answer;
+
 }
 function startTimer() {
     var presentTime = document.getElementById('timer').innerHTML;
@@ -79,7 +87,7 @@ function startTimer() {
     if (s == 59) { m = m - 1 }
     if (m < 0) {
         clearInterval(timerInterval);
-        alert("quiz is over");
+        displayScore();
     }
 
     document.getElementById('timer').innerHTML = m + ":" + s;
@@ -100,4 +108,9 @@ function removeOneMinute() {
     var s = timeArray[1];
     document.getElementById('timer').innerHTML = (m - 1) + ":" + s;
     startTimer();
+}
+function displayScore() {
+    triviaScreen.style.display = "none";
+    timeArea.style.display = "none";
+    endGame.style.display = "block";
 }
