@@ -32,12 +32,12 @@ var triviaScreen = document.getElementById("trivia");
 var choiceArea = document.getElementById("choice");
 var questionArea = document.getElementById("question");
 var timeArea = document.querySelector('.timer');
-var currentCorrectAnswer = 0;
+var currentCorrectAnswer;
 var totalRightAnswer = 0;
 var currentQuestion = 0;
 var timerInterval;
 var endGame = document.getElementById("test-results");
-//var 
+
 
 function startGame() {
     startScreen.style.display = "none";
@@ -50,12 +50,13 @@ function checkAnswer(e) {
     currentCorrectAnswer = wholeGame[currentQuestion].answer;
     if (e.srcElement.id == currentCorrectAnswer) {
         e.srcElement.classList.add("correct");
-        currentCorrectAnswer++;
+        totalRightAnswer++;
     } else {
         e.srcElement.classList.add("wrong");
         removeOneMinute();
     }
     currentQuestion++;
+    console.log(totalRightAnswer);
     setTimeout(loadQuestion, 1000);
 }
 function loadQuestion() {
@@ -113,4 +114,6 @@ function displayScore() {
     triviaScreen.style.display = "none";
     timeArea.style.display = "none";
     endGame.style.display = "block";
+    var finalScoreArea = document.getElementById("final-score");
+    finalScoreArea.innerHTML = totalRightAnswer * 5;
 }
