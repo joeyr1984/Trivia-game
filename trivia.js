@@ -51,6 +51,7 @@ function checkAnswer(e) {
         currentCorrectAnswer++;
     } else {
         e.srcElement.classList.add("wrong");
+        removeOneMinute();
     }
     currentQuestion++;
     setTimeout(loadQuestion, 1000);
@@ -71,25 +72,32 @@ function loadQuestion() {
     currentCorrectAnswer = wholeGame[currentQuestion].answer;
 }
 function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  //if(m<0){alert('timer completed')}
-  
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  console.log(m)
-  timerInterval = setTimeout(startTimer, 1000);
+    var presentTime = document.getElementById('timer').innerHTML;
+    var timeArray = presentTime.split(/[:]+/);
+    var m = timeArray[0];
+    var s = checkSecond((timeArray[1] - 1));
+    if (s == 59) { m = m - 1 }
+    if (m < 0) {
+        clearInterval(timerInterval);
+        alert("quiz is over");
+    }
+
+    document.getElementById('timer').innerHTML = m + ":" + s;
+    timerInterval = setTimeout(startTimer, 1000);
 }
 
 function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
+    if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
+    if (sec < 0) { sec = "59" };
+    return sec;
 }
 startButton.addEventListener("click", startGame);
-function removeOneMinute(params) {
-    
+function removeOneMinute() {
+    clearInterval(timerInterval);
+    var presentTime = document.getElementById('timer').innerHTML;
+    var timeArray = presentTime.split(/[:]+/);
+    var m = timeArray[0];
+    var s = timeArray[1];
+    document.getElementById('timer').innerHTML = (m - 1) + ":" + s;
+    startTimer();
 }
