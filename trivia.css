@@ -52,3 +52,21 @@ li{
 i{
     color: #5DFDCB;
 }
+#trivia {
+    display: none;
+}
+#a,#b,#c,#d {
+    list-style-type: none;
+    color: black;
+}
+.answer{
+    display: list-item;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#question {
+    font-family: 'Lato', sans-serif;
+    color: #08090A;
+}
