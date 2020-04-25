@@ -70,3 +70,16 @@ i{
     font-family: 'Lato', sans-serif;
     color: #08090A;
 }
+.correct{
+background-color: #5DFDCB;
+color: black;
+}
+.wrong {
+background-color: #F7638D;
+color: black
+}
+.timer {
+    font-family: 'Lato', sans-serif;
+    color: #A3A8E5;
+    display: none;
+}
