@@ -95,6 +95,7 @@ function loadQuestion() {
     }
 
 }
+//Starts Timer adds penalty for wrong answers
 function startTimer() {
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
@@ -111,7 +112,7 @@ function startTimer() {
 }
 
 function checkSecond(sec) {
-    if (sec < 10 && sec >= 0) { sec = "0" + sec }; // add zero in front of numbers < 10
+    if (sec < 10 && sec >= 0) { sec = "0" + sec }; 
     if (sec < 0) { sec = "59" };
     return sec;
 }
@@ -124,6 +125,7 @@ function removeOneMinute() {
     document.getElementById('timer').innerHTML = (m - 1) + ":" + s;
     startTimer();
 }
+//scoreboard
 function displayScore() {
     triviaScreen.style.display = "none";
     timeArea.style.display = "none";
@@ -170,6 +172,7 @@ function viewHighScores() {
         }
     }
 }
+//replay game - save scores
 startButton.addEventListener("click", startGame);
 playAgainButton.addEventListener("click", readyToStart);
 saveScoreButton.addEventListener("click", saveHighScore);
