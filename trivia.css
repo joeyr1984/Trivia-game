@@ -39,10 +39,14 @@ cursor: pointer;
 button:hover {
     background-color: #A3A8E5;
 }
-footer {
+.footer {
     background-color: #08090A;
     padding: 30px;
+    position: absolute;     
+    bottom: 0;     
+    width: 100%;
 }
+
 #footer-logo{
 width: 10rem;
 }

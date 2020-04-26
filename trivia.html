@@ -24,65 +24,68 @@
 </head>
 
 <body>
-    <div>
+
+    <header>
         <div class="row">
             <div class="col-md-4" id="top">
                 <a href="./trivia.html"><img src="./images/logo.svg" alt="Corperate logo for Dewey online resources"
                         id="logo-top"></a>
             </div>
-        </div>
-        <main>
-            <div class="col-12" id="main">
-                <section id="start">
-                    <div>
-                        <h1>TEST TIME</h1>
-                    </div>
-                    <div>
-                        <img src="./images/game-start.svg" alt="Illistration of person passing the TEST"
-                            class="game-cartoon">
-                    </div>
-                    <div>
-                        <button type="button" class="button" id="start-trivia">START</button>
-                    </div>
-                </section>
-                <section id="trivia">
-                    <h1 id="question"></h1>
-                    <ol id="choice">
-
-                    </ol>
-                </section>
-                <section>
-                    <h2 class="timer">TIME: <span id="timer">5:00</span></h2>
-                </section>
-                <section id="test-results">
-                    <h1>YOUR SCORE</h1>
-                    <div id="score-tally">
-                        <h4>Your score is: <span id="final-score"></span></h4>
-                    </div>
-                    <div>
-                        <img src="images/score.svg" alt="illistration of people checking score" class="game-cartoon">
-                    </div>
-                    <form class="form-inline">
-                        <label for="user-name" class="mr-sm-2">Enter Your Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="user-name"
-                            placeholder="Jane Doe">
-                        <button type="submit" class="btn btn-primary mb-2" id="save-score-button">Submit</button>
-                    </form>
-                </section>
+            <div class="col-md-4 offset-md-4">
+                <button class="btn btn-primary float-right mt-3 mr-3" id="view-high-scores">High Scores</button>
             </div>
+        </div>
+    </header>
 
-        </main>
+
+    <main class="row">
+        <div class="col-12" id="main">
+            <section id="start">
+                <div>
+                    <h1>TEST TIME</h1>
+                </div>
+                <div>
+                    <img src="./images/game-start.svg" alt="Illistration of person passing the TEST"
+                        class="game-cartoon">
+                </div>
+                <div>
+                    <button type="button" class="button" id="start-trivia">START</button>
+                </div>
+            </section>
+            <section id="trivia">
+                <h1 id="question"></h1>
+                <ol id="choice">
+
+                </ol>
+            </section>
+            <section>
+                <h2 class="timer">TIME: <span id="timer">5:00</span></h2>
+            </section>
+            <section id="test-results">
+                <h1>YOUR SCORE</h1>
+                <div id="score-tally">
+                    <h4>Your score is: <span id="final-score"></span></h4>
+                </div>
+                <div>
+                    <img src="images/score.svg" alt="illistration of people checking score" class="game-cartoon">
+                </div>
+                <form class="form-inline">
+                    <label for="user-name" class="mr-sm-2">Enter Your Name</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="user-name" placeholder="Jane Doe">
+                    <button type="submit" class="btn btn-primary mb-2" id="save-score-button">Submit</button>
+                </form>
+            </section>
+        </div>
+
+    </main>
     </div>
-    <footer>
+    <footer class="footer">
         <div class="row">
             <div class="col-md-4">
                 <a href="./trivia.html"><img src="images/footer-logo.svg" alt="corperate-logo for dewey"
                         id="footer-logo"></a>
             </div>
-            <div class="col-md-4" id="footer">
-
-            </div>
-            <div class="col-md-4" id="footer">
+            <div class="col-md-4 offset-md-4">
                 <ul class="d-flex list-inline justify-content-end">
                     <li class="list-inline-item">
                         <a class="footer-link" ref="" target="_blank" aria-label="Instagram">
