@@ -56,10 +56,10 @@ li{
 i{
     color: #5DFDCB;
 }
-#trivia, #test-results {
+#trivia, #test-results, #high-score-history, #play-again {
     display: none;
 }
-#a,#b,#c,#d {
+#a,#b,#c,#d, #high-score-area li {
     list-style-type: none;
     color: black;
 }

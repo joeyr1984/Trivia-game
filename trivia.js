@@ -40,11 +40,24 @@ var endGame = document.getElementById("test-results");
 var scoreBoard = [];
 var finalScoreArea = document.getElementById("final-score");
 var saveScoreButton = document.getElementById("save-score-button");
+var playAgainButton = document.getElementById("play-again");
+var scoreList = document.getElementById("high-score-history");
 
+function readyToStart() {
+    startScreen.style.display = "block";
+    triviaScreen.style.display = "none";
+    timeArea.style.display = "none";
+    playAgainButton.style.display ="none";
+    endGame.style.display = "none";
+    scoreList.style.display = "none"; 
+}
 function startGame() {
     startScreen.style.display = "none";
     triviaScreen.style.display = "block";
     timeArea.style.display = "block";
+    playAgainButton.style.display ="none";
+    endGame.style.display = "none";
+    scoreList.style.display = "none";
     loadQuestion();
     startTimer();
 }
@@ -115,6 +128,7 @@ function displayScore() {
     triviaScreen.style.display = "none";
     timeArea.style.display = "none";
     endGame.style.display = "block";
+    playAgainButton.style.display ="block";
 
     finalScoreArea.innerHTML = totalRightAnswer * 5;
 }
@@ -136,6 +150,27 @@ function saveHighScore(e) {
             //console.log(scoreBoard);
         }
     }
+    viewHighScores();
+}
+function viewHighScores() {
+    endGame.style.display = "none";
+    scoreList.style.display = "block";
+    
+    var getScoreList = document.getElementById("high-score-area");
+    getScoreList.innerHTML = "";
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.highScores) {
+            var savedScores = JSON.parse(localStorage.highScores);
+            for (let index = 0; index < savedScores.length; index++) {
+                const element = savedScores[index];
+                var player = document.createElement("li");
+                player.innerHTML = element.name + ": " + element.score;
+                getScoreList.appendChild(player);
+            }
+        }
+    }
 }
 startButton.addEventListener("click", startGame);
+playAgainButton.addEventListener("click", readyToStart);
 saveScoreButton.addEventListener("click", saveHighScore);
+
