@@ -44,6 +44,9 @@ var playAgainButton = document.getElementById("play-again");
 var scoreList = document.getElementById("high-score-history");
 
 function readyToStart() {
+    document.getElementById('timer').innerHTML = "5:00";
+    totalRightAnswer = 0;
+    currentQuestion = 0;
     startScreen.style.display = "block";
     triviaScreen.style.display = "none";
     timeArea.style.display = "none";
@@ -90,6 +93,7 @@ function loadQuestion() {
         }
         currentCorrectAnswer = wholeGame[currentQuestion].answer;
     } else {
+        clearTimeout(timerInterval);
         displayScore();
 
     }
@@ -103,7 +107,7 @@ function startTimer() {
     var s = checkSecond((timeArray[1] - 1));
     if (s == 59) { m = m - 1 }
     if (m < 0) {
-        clearInterval(timerInterval);
+        clearTimeout(timerInterval);
         displayScore();
     }
 
@@ -117,7 +121,7 @@ function checkSecond(sec) {
     return sec;
 }
 function removeOneMinute() {
-    clearInterval(timerInterval);
+    clearTimeout(timerInterval);
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
     var m = timeArray[0];
