@@ -75,7 +75,7 @@ function checkAnswer(e) {
     }
     currentQuestion++;
     //console.log(totalRightAnswer);
-    setTimeout(loadQuestion, 1000);
+    setTimeout(loadQuestion, 500);
 }
 function loadQuestion() {
     if (currentQuestion < wholeGame.length) {
