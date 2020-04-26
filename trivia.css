@@ -11,12 +11,13 @@ body {
     height: 100px;
 }
 #logo-top {
-    height: 8rem;
+    height: 6rem;
     padding:20px;
 }
 #main {
-    height: 35rem;
+    /* height: 35rem; */
     text-align: center;
+    margin-bottom: 25px;
 }
 h1 {
 font-family: pilar-pro, sans-serif;
@@ -26,7 +27,7 @@ font-size: 50px;
 color:#8789C0;
 }
 .game-cartoon{
-    width: 22rem;
+    width: 400px;
 }
 .button {
 font-family: pilar-pro, sans-serif;
@@ -94,4 +95,12 @@ color: black
 }
 .form-inline{
     justify-content: center;
+}
+#choice {
+    padding-left: 0;
+}
+@media only screen and (max-width: 576px){
+    .game-cartoon{
+        width: 200px;
+    }
 }
