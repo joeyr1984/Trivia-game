@@ -37,7 +37,9 @@ var totalRightAnswer = 0;
 var currentQuestion = 0;
 var timerInterval;
 var endGame = document.getElementById("test-results");
-
+var scoreBoard = [];
+var finalScoreArea = document.getElementById("final-score");
+var saveScoreButton = document.getElementById("save-score-button");
 
 function startGame() {
     startScreen.style.display = "none";
@@ -56,7 +58,7 @@ function checkAnswer(e) {
         removeOneMinute();
     }
     currentQuestion++;
-    console.log(totalRightAnswer);
+    //console.log(totalRightAnswer);
     setTimeout(loadQuestion, 1000);
 }
 function loadQuestion() {
@@ -100,7 +102,6 @@ function checkSecond(sec) {
     if (sec < 0) { sec = "59" };
     return sec;
 }
-startButton.addEventListener("click", startGame);
 function removeOneMinute() {
     clearInterval(timerInterval);
     var presentTime = document.getElementById('timer').innerHTML;
@@ -114,6 +115,27 @@ function displayScore() {
     triviaScreen.style.display = "none";
     timeArea.style.display = "none";
     endGame.style.display = "block";
-    var finalScoreArea = document.getElementById("final-score");
+
     finalScoreArea.innerHTML = totalRightAnswer * 5;
 }
+function saveHighScore(e) {
+    e.preventDefault();
+    var newEntry = {
+        name: document.getElementById("user-name").value,
+        score: finalScoreArea.innerHTML
+    };
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.highScores) {
+            var savedScores = JSON.parse(localStorage.highScores);
+            savedScores.push(newEntry);
+            localStorage.highScores = JSON.stringify(savedScores);
+            //console.log(JSON.stringify(savedScores));
+        } else {
+            scoreBoard.push(newEntry);
+            localStorage.highScores = JSON.stringify(scoreBoard);
+            //console.log(scoreBoard);
+        }
+    }
+}
+startButton.addEventListener("click", startGame);
+saveScoreButton.addEventListener("click", saveHighScore);
