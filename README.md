@@ -10,8 +10,8 @@ Decided to have a little fun with this one. I Created a fake company called "DEW
 * bootstrap for resonsiveness 
 * javascript functionality that dynamicly updates the DOM with a timer and lets the user know when they got an answer wrong and local storage to display high scores. 
 
- ## Dewey Brand identy 
+ ## Preview of the App 
  
- ![DEWEYBRANDLOGO](./images/logoblack.svg)
+ ![DEWEYBRANDLOGO](./images/Triviagame.gif)
 
  
