@@ -1,6 +1,11 @@
+.container-fuild {
+    width: auto;
+    padding: 0 15px;
+}
 body {
     background-color: #F5FBFF;
     color: #08090A;
+    min-height: 100vh;
 }
 #top {
     height: 100px;
@@ -42,9 +47,9 @@ button:hover {
 .footer {
     background-color: #08090A;
     padding: 30px;
-    position: absolute;     
+    /*position: absolute;     
     bottom: 0;     
-    width: 100%;
+    width: 100%;*/
 }
 
 #footer-logo{
