@@ -43,6 +43,10 @@ function removeOneMinute() {
     startTimer();
 }
 ```
+## link
+
+https://joeyr1984.github.io/Trivia-game/
+
  ## Preview of the App 
  
  ![DEWEYBRANDLOGO](./images/Triviagame.gif)
